@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User-Defined Functions</title>
+</head>
+<!-- Manish kumar | ERP-10773 -->
+<body>
+    <h2>Calculator Using Functions</h2>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="performOperations()">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+       
+        function add(a, b) {
+            return a + b;
+        }
+
+        function subtract(a, b) {
+            return a - b;
+        }
+
+       
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        function divide(a, b) {
+            if (b === 0) {
+                return "Cannot divide by zero";
+            }
+            return a / b;
+        }
+
+        function performOperations() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+
+            const results = `
+                Addition: ${add(num1, num2)} <br>
+                Subtraction: ${subtract(num1, num2)} <br>
+                Multiplication: ${multiply(num1, num2)} <br>
+                Division: ${divide(num1, num2)}
+            `;
+
+            document.getElementById("result").innerHTML = results;
+        }
+    </script>
+</body>
+</html>

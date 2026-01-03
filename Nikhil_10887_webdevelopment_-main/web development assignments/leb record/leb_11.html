@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arithmetic Operations | Unit 3</title>
+<!-- Manish kumar | ERP-10773-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            animation: slideUp 1s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 48%;
+            padding: 10px;
+            margin: 5px 1%;
+            border: none;
+            border-radius: 6px;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #388e3c;
+            transform: scale(1.05);
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+            text-align: center;
+            color: #222;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Arithmetic Calculator</h2>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+
+    <div>
+        <button onclick="calculate('+')">Add</button>
+        <button onclick="calculate('-')">Subtract</button>
+        <button onclick="calculate('*')">Multiply</button>
+        <button onclick="calculate('/')">Divide</button>
+    </div>
+
+    <div class="result" id="output">Result will appear here</div>
+
+    <footer>
+        Mukesh sahu | ERP: 10852 <br>
+        B.Tech – 1st Semester<br>
+        Magic of HTML & CSS..
+    </footer>
+</div>
+
+<script>
+    function calculate(operator) {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+        let result;
+
+        if (operator === '+') result = a + b;
+        else if (operator === '-') result = a - b;
+        else if (operator === '*') result = a * b;
+        else if (operator === '/') {
+            result = b !== 0 ? (a / b).toFixed(2) : "Cannot divide by zero";
+        }
+
+        document.getElementById("output").innerText = "Result: " + result;
+    }
+</script>
+
+</body>
+</html>

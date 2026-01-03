@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Manish kumar | ERP-10773 -->
+    <meta charset="UTF-8">
+    <title>Form Validation Example</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" oninput="checkInput(this)"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" oninput="checkInput(this)"><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" oninput="checkInput(this)"><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        function checkInput(element) {
+            element.style.borderColor = element.value ? "green" : "red";
+        }
+
+        function validateForm() {
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const age = document.getElementById("age").value;
+
+            let message = "";
+
+            if (username === "") {
+                message += "Username is required.<br>";
+            }
+            if (email === "") {
+                message += "Email is required.<br>";
+            }
+            if (age === "" || age < 1) {
+                message += "Enter a valid age.<br>";
+            }
+
+            if (message) {
+                document.getElementById("message").innerHTML = message;
+                alert("Please fix errors before submitting!");
+                return false; 
+            } else {
+                alert("Form submitted successfully!");
+                return true; 
+            }
+        }
+    </script>
+</body>
+</html>

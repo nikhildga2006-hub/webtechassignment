@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Manishkumar | ERP-10773 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced CSS Selectors</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 20px;
+            background-color: #f4f4f9;
+            line-height: 1.6;
+        }
+
+        .class-example {
+            color: #91108d;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        #id-example {
+            font-size: 22px;
+            font-weight: bold;
+            color: #1e924d;
+            margin: 10px 0;
+        }
+
+        div p {
+            color: #126294;
+            background-color: #a5a20a;
+            padding: 8px;
+            border-left: 4px solid #228B22;
+            margin: 10px 0;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+            margin: 15px 0;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        p:hover {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <p class="class-example">This is a class example....</p>
+    <p id="id-example">This is an ID example.....</p>
+    <div>
+        <p>This is a descendant example inside a div.....</p>
+    </div>
+</body>
+</html>

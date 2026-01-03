@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      background-color: #d11919;
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoecEpTo29bKSCSrbTxAlGUWP_khdmlkEjzw&s");
+        
+      padding: 20px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: rgba(173, 216, 230, 0.665);
+      text-align: center;
+      line-height: 60px;
+      font-weight: bold;
+      box-shadow: 0px 0px 7px black;
+
+    }
+
+    @media (max-width: 600px) {
+      .flex-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flex-container">
+    <div class="box">MUKESH</div>
+    <div class="box">SAHU</div>
+    <div class="box">RAIGARH</div>
+  </div>
+
+</body>
+</html>
